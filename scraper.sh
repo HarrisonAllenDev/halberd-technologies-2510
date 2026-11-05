@@ -24,4 +24,5 @@ done < names.txt
 # list of all the dictionaries
 echo "names=($list)" >> faculty_names.sh
 
-echo "Found $count names."
+# call adduser.sh to create users
+./adduser.sh
