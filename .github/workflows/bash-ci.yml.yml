@@ -1,0 +1,32 @@
+name: Bash CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out project
+        uses: actions/checkout@v6
+
+      - name: Install ShellCheck
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y shellcheck
+
+      - name: Check Bash syntax
+        run: |
+          for script in main.sh add_user.sh scraper.sh tests/test_add_user.sh; do
+            bash -n "$script"
+          done
+
+      - name: Lint account scripts
+        run: shellcheck -e SC1090,SC1091 main.sh add_user.sh tests/test_add_user.sh
+
+      - name: Test Add User functions with mocked system commands
+        run: sudo bash tests/test_add_user.sh
