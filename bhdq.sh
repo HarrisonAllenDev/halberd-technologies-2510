@@ -80,6 +80,6 @@ fi
 
 #allows user through to the rest of the program, credit: https://stackoverflow.com/questions/59895
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
-exec bash "$SCRIPT_DIR/main.sh"
+exec bash "$SCRIPT_DIR/main.sh" "$@" #hands off sudo privledges to other files in the foler, seems very handy after testing
 
-#AI was used in the following ways: ChatGPT, a model from OpenAI was used to develop the key obfuscation technique and licensing method
+#AI was used in the following ways: ChatGPT, a model from OpenAI was used to develop the key obfuscation technique and licensing method.

@@ -1,5 +1,4 @@
 #!/bin/bash
-# Main menu for Parts 1-3. Run without arguments for preview mode.
 # Run with sudo ./main.sh --apply to allow account creation in a test VM.
 
 set -o pipefail
@@ -24,7 +23,7 @@ bulk_create() {
     local failed=0
     local names_file="$project_dir/names.txt"
 
-    # scraper.sh, written by your teammate, downloads the HTML and generates names.txt.
+    # scraper.sh, downloads the HTML and generates names.txt.
     if ! ( cd "$project_dir" && bash ./scraper.sh ); then
         echo 'Error: Scraper failed.' >&2
         return 1
