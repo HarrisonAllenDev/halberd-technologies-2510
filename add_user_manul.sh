@@ -21,12 +21,6 @@ create_account() {
         return 0
     fi
 
-    # Preview is the default, until main.sh explicitly enables creation.
-    if [[ "${CREATE_USERS:-false}" != true ]]; then
-        printf 'Would create: %s\n' "$username"
-        return 0
-    fi
-
     if [[ "$EUID" -ne 0 ]]; then
         echo 'Error: Run main.sh with sudo to create users.' >&2
         return 1
@@ -54,3 +48,5 @@ add_user() {
     read -r -p 'Enter last name: ' last || return 1
     create_account "$first" "$last"
 }
+
+add_user
