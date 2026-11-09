@@ -78,6 +78,8 @@ if ! check_license; then
     exit 1
 fi
 
+# credit goes to https://stackoverflow.com/questions/8352851
+chmod +x *.sh
 #allows user through to the rest of the program, credit: https://stackoverflow.com/questions/59895
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 exec bash "$SCRIPT_DIR/main.sh" "$@" #hands off sudo privledges to other files in the foler, seems very handy after testing
