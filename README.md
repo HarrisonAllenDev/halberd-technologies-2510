@@ -4,7 +4,7 @@
 **1. Ensure you have curl installed**
 
 ```
-sudo apt install -y curl
+sudo apt install curl
 ```
 
 **2. Download the program**
@@ -23,17 +23,10 @@ https://github.com/HarrisonAllenDev/halberd-technologies-2510
 
 Right click on the zipped folder and press "Extract"
 
-**4. Give all files executable permission within the folders directory**
-
-Enter the extracted folders directory:
+**4. Enter the extracted folders directory**
 
 ```
 cd ~/Downloads/halberd-technologies-2510-main
-```
-
-Once in the folder, give all files executable permissions:
-```
-sudo chmod +x *.sh
 ```
 
 **5. Run the Program**
@@ -74,5 +67,5 @@ Permission denied / script not executable
 Give the Bash scripts executable permissions:
 
 ```
-chmod +x *.sh
+chmod +x [file name your having trouble with ex. scraper.sh]
 ```
