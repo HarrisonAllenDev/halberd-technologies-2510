@@ -25,4 +25,4 @@ done < names.txt
 echo "names=($list)" >> faculty_names.sh
 
 # call adduser.sh to create users
-./adduser.sh
+bash ./add_user.sh
