@@ -8,7 +8,7 @@ EXPECTED_HASH="edc0f4a1ae7be889e43f089ee8d13bef9558a5f41157162602b1aaf753dfb769"
 #credit to https://stackoverflow.com/questions/18215973/
 if [[ $EUID -ne 0 ]]; then
     echo "ERROR: This program must be run as root."
-    echo "Run: sudo ./bhdq"
+    echo "Run: sudo ./bhdq.sh"
     exit 1
 fi
 
