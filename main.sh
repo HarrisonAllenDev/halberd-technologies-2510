@@ -9,7 +9,7 @@ do
 	# Menu for potential user inputs
 	echo ""
 	echo "Please choose options 1-3:"
-	echo "1. Automatically create users from CS webpage (Default)"
+	echo "1. Automatically create users from CS webpage"
 	echo "2. Manually add a new user"
 	echo "3. End program"
 	read -p "Enter a value 1-3: " choice
