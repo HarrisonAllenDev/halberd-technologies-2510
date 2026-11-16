@@ -39,13 +39,13 @@ On the first launch, enter the 16-digit license key provided by the team. Follow
 
 ## **Troubleshooting**
 
-Permission denied / must run as root
+**Permission denied / must run as root:**
 
 ```
 sudo bash bhdq.sh
 ```
 
-No such file or directory
+**No such file or directory:**
 
 Make sure you are inside the repository folder:
 
@@ -55,17 +55,21 @@ ls
 sudo bash bhdq.sh
 ```
 
-Bad interpreter / ^M / Windows CRLF line endings
+**Bad interpreter / ^M / Windows CRLF line endings:**
 
 ```
 sudo apt install -y dos2unix
 dos2unix *.sh
 sudo bash bhdq.sh
 ```
-Permission denied / script not executable
+**Permission denied / script not executable:**
 
-Give the Bash scripts executable permissions:
+Give specific bash scripts executable permissions:
 
 ```
 chmod +x [file name your having trouble with ex. scraper.sh]
+```
+or give all bash scripts executable permissions:
+```
+chmod +x *
 ```
