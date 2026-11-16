@@ -1,5 +1,9 @@
+# **HALBERD TECHNOLOGIES - BHDQ Operations Account Creator:**
+This software is used to automate account creation for the Tennessee Technological University Computer Science department on a fresh Ubuntu system. It allows the user to either automate account creation, or manually create new users by providing their first and last names.
+## **Initial Requirements:**
+Ensure that you have a fresh installation of Ubuntu 26.04 and BASH v5.3.9. This can either be natively installed on the host system, or can be run through a virtual machine (i.e. VMWare, VirtualBox, etc.).
 
-# How to Run
+## **How to Run**
 
 **1. Ensure you have curl installed**
 
@@ -35,7 +39,7 @@ cd ~/Downloads/halberd-technologies-2510-main
 sudo bash bhdq.sh
 ```
 
-On the first launch, enter the 16-digit license key provided by the team. Follow the on-screen menu.
+On the first launch, you will be required to enter the 16-digit license key provided by the team. Follow the on-screen menu.
 
 ## **Troubleshooting**
 
