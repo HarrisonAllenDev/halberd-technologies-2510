@@ -1,4 +1,6 @@
 #!/bin/bash
+# shellcheck disable=all
+#suppresses all shell_check errors
 # Unit tests for add_user.sh. All account-management commands are mocked.
 set -u
 
