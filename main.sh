@@ -12,7 +12,7 @@ do
 	echo "1. Automatically create users from CS webpage"
 	echo "2. Manually add a new user"
 	echo "3. End program"
-	read -p "Enter a value 1-3: " choice
+	read -rp "Enter a value 1-3: " choice
 	echo ""
 
 	# Validate that input is a digit
@@ -23,13 +23,13 @@ do
 	fi
 
 	# Validate that input is a number 1-3
-	if [ $choice -eq 1 ]
+	if [ "$choice" -eq 1 ]
 	then
 		bash ./scraper.sh # If 1, run scraper.sh
-	elif [ $choice -eq 2 ]
+	elif [ "$choice" -eq 2 ]
 	then
 		bash ./manual_user.sh # If 2, run manual_user.sh
-	elif [ $choice -eq 3 ]
+	elif [ "$choice" -eq 3 ]
 	then
 		echo "Goodbye!" # If 3, break from the loop
 		LOOP=1
