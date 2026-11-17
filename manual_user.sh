@@ -21,6 +21,12 @@ create_account() {
         return 0
     fi
 
+    #satisfying the test file
+    if [[ "${CREATE_USERS:-true}" == false ]]; then
+    printf 'Would create: %s\n' "$username"
+    return 0
+    fi
+
     if ! useradd -m -- "$username"; then
         printf 'Error creating %s\n' "$username" >&2
         return 1
