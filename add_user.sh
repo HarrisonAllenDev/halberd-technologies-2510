@@ -11,7 +11,7 @@ for name_ref in "${names[@]}"; do
 	password=$(echo $RANDOM | md5sum | head -c 12) # Creates password by generating random string of 12 numbers and hashing them into 12 characters
 	sudo useradd -p "$password" "$username" # Creates new user with provided username and password (requires user auth for initial creation)
 	user=$username" "$password # Combines username and password to print to users.txt
-	echo $user >> users.txt
+	echo "$user" >> users.txt
 done
 
 echo "Created ${#names[@]} users."
