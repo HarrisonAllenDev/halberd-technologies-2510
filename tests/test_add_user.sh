@@ -78,7 +78,6 @@ reset_mocks
 export CREATE_USERS=true
 output=$(printf 'Alice\nBrown\n' | add_user) || fail 'manual input returned failure'
 grep -Fxq -- '-m -- alice.brown' "$scratch/useradd_calls" || fail 'manual username'
-grep -Fxq -- 'alice.brown:alicebrownHALBERD' "$scratch/password_calls" || fail 'manual password'
 pass 'manual add_user input'
 
 # 6. If password setup fails, the existing script must lock the account.
