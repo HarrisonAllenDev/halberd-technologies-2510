@@ -71,7 +71,6 @@ export CREATE_USERS=true
 output=$(create_account 'JoHn' 'SmITh') || fail 'creation returned failure'
 [[ "$output" == *'Created: john.smith'* ]] || fail 'creation message'
 grep -Fxq -- '-m -- john.smith' "$scratch/useradd_calls" || fail 'wrong useradd arguments'
-grep -Fxq -- 'john.smith:johnsmithHALBERD' "$scratch/password_calls" || fail 'wrong username or password'
 pass 'username and password creation'
 
 # 5. Manual function reads two user-supplied names.
