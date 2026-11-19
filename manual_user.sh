@@ -41,7 +41,7 @@ create_account() {
 
     printf 'Created: %s\n' "$username"
     user=$username" "$password
-    echo $user >> users.txt
+    echo "$user" >> users.txt
 }
 
 add_user() {
