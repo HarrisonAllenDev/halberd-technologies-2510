@@ -14,17 +14,16 @@ create_account() {
     fi
 
     username="${first}.${last}"
-    password="${first}${last}HALBERD"
+    password=$(echo $RANDOM | md5sum | head -c 12)
 
     if id "$username" &>/dev/null; then
         printf 'Already exists: %s\n' "$username"
         return 0
     fi
 
-    #satisfying the test file
-    if [[ "${CREATE_USERS:-true}" == false ]]; then
-    printf 'Would create: %s\n' "$username"
-    return 0
+    if [[ "$EUID" -ne 0 ]]; then
+        echo 'Error: Run main.sh with sudo to create users.' >&2
+        return 1
     fi
 
     if ! useradd -m -- "$username"; then
@@ -40,6 +39,8 @@ create_account() {
     fi
 
     printf 'Created: %s\n' "$username"
+    user=$username" "$password
+    echo $user >> users.txt
 }
 
 add_user() {
@@ -50,7 +51,4 @@ add_user() {
     create_account "$first" "$last"
 }
 
-#shell_check fix
-if [[ "${BASH_SOURCE[0]}" == "$0" ]]; then
-    add_user
-fi
+add_user
