@@ -1,4 +1,6 @@
 #!/bin/bash
+# shellcheck disable=SC2154
+#gets rid of the shellcheck error 
 
 # Pull names list from faculty_names.sh
 . ./faculty_names.sh
